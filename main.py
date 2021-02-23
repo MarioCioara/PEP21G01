@@ -1,17 +1,11 @@
-# val1 = input("\nValoarea pentru care doriti calcularea log in baza 2: ")
-
-# Imagineaza-ti ca utilizatorul a introdus valoarea 8 și asteapta rezultatul logaritmului
-import math
-import datetime
-
-val1 = 8
-
-rezultat = math.log2(val1)
-
-a = datetime.datetime.now()
-
-fisier = open("C:\\Users\Mario\Desktop\da.txt","w+")
-fisier.writelines(['Datetime is: ',str(a),'\n'])
+print('Hello!')
+print()
+print('In which city did you grow up?')
+city = str(input())
+print()
+print('Name a pet please')
+pet = str(input())
+print()
+print(city + ' ' + pet)
 
 
-print("Rezultatul este: " + str(rezultat))
