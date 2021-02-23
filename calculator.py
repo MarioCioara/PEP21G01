@@ -97,7 +97,7 @@ while True:
             break
 
 
-	#Cand se introduce o optiune invalida,se va crea un fisier text pe desktop si se trece in el optiunea si datetime-ul
+	#Cand se introduce o optiune invalida,se va crea un fisier text pe desktop si se va trece in el optiunea si datetime-ul
     else:
         a = datetime.datetime.now()
         fisier = open("C:\\Users\Mario\Desktop\data.txt", "a")
