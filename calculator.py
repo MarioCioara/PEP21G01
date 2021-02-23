@@ -1,6 +1,7 @@
 #Calculator cu meniu interactiv
 
 import datetime
+import os
 
 while True:
 
@@ -99,8 +100,10 @@ while True:
 
 	#Cand se introduce o optiune invalida,se va crea un fisier text pe desktop si se va trece in el optiunea si datetime-ul
     else:
+        user_profile = os.environ['USERPROFILE']
+        user_desktop = user_profile + "\Desktop" + "\data.txt"
         a = datetime.datetime.now()
-        fisier = open("C:\\Users\Mario\Desktop\data.txt", "a")
+        fisier = open(user_desktop, "a")
         fisier.writelines(['Utilizatorul a introdus optiunea invalida ',str(oper),' la data si ora: ',str(a),'\n','\n'])
         fisier.close()
 
