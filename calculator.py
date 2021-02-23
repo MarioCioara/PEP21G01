@@ -100,8 +100,8 @@ while True:
 
 	#Cand se introduce o optiune invalida,se va crea un fisier text pe desktop si se va trece in el optiunea si datetime-ul
     else:
-        user_profile = os.environ['USERPROFILE']
-        user_desktop = user_profile + "\Desktop" + "\data.txt"
+        user_profile = os.environ['USERPROFILE'] # Memoram calea spre profilul userului
+        user_desktop = user_profile + "\Desktop" + "\data.txt" # Punem intr-o variabila calea completa spre fisierul de pe desktop
         a = datetime.datetime.now()
         fisier = open(user_desktop, "a")
         fisier.writelines(['Utilizatorul a introdus optiunea invalida ',str(oper),' la data si ora: ',str(a),'\n','\n'])
