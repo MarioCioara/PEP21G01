@@ -152,7 +152,7 @@ string6 = 'Subsemnatul {} {}\nDeclar:declaratie'
 result = string6.format('Cioara','Mario')
 print(result)
 print()
-
+print()
 result = string5.replace('{','(')
 result = result.replace('}',')')
 print(result)
