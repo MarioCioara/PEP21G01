@@ -135,6 +135,7 @@ diff = total2 - total1
 # print(id(var1),id(var2))
 
 # exercitiu
+print('/'.center(22,' '))
 print('/'.center(20,' '))
 print('/'.center(18,' '))
 print('/'.center(16,' '))
