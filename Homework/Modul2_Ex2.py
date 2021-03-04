@@ -52,9 +52,10 @@ diff_hours = rem_hours % 24 # Calculate the extra hours which are part of the fi
 rem_hours2 = rem_hours - diff_hours # Substract the extra hours from the remaining hours
 diff_days = rem_hours2 // 24 # Convert the remaining hours into days,which are part of the final answer
 
-
+#Print the difference in seconds
+print("The difference in seconds is: " + str(diff))
 #Print the difference in the required format
-print("The difference is: " + str(diff_days) + ":" + str(diff_hours) + ":" + str(diff_mins) + ":" + str(diff_sec))
+print("The difference is(dd:hh:mm:ss): " + str(diff_days) + ":" + str(diff_hours) + ":" + str(diff_mins) + ":" + str(diff_sec))
 
 
 
