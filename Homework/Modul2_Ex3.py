@@ -13,4 +13,4 @@ w = float(input("Width = "))
 #The diagonal is square root of the sum of length at power 2 and width at power 2
 diagonal = (l.__pow__(2) + w.__pow__(2)).__pow__(1/2)
 
-print(diagonal)
+print("Diagonal = " + str(diagonal))
