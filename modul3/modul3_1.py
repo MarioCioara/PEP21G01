@@ -62,10 +62,23 @@
 
 #---------------------------------------------------
 
-x = str(input("text = "))
+# x = str(input("text = "))
+#
+# for i in x:
+#     print(chr(ord(i) + 129),sep='',end='')
 
-for i in x:
-    print(chr(ord(i) + 129),sep='',end='')
+#Problema cu piramida de pe netacad
+
+blocks = int(input("Enter the number of blocks: "))
+i = 1
+height = 0
+
+while (blocks > 0):
+    height = height + 1
+    blocks = blocks - i
+    i = i + 1
+
+print("The height of the pyramid:", height)
 
 
 
