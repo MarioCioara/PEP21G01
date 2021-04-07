@@ -92,34 +92,36 @@ from time import sleep
 
 
 
-def ip_gen():
-    ip = '192.168.0.{}/24'
-    list1 = random.sample(range(0, 10), 10)
-
-    for x in list1:
-
-            yield ip.format(x)
-
-gen = ip_gen()
-for value in gen:
-    print(value)
-    sleep(0.5)
-
-
+# def ip_gen():
+#     ip = '192.168.0.{}/24'
+#     list1 = random.sample(range(0, 10), 10)
+#
+#     for x in list1:
+#
+#             yield ip.format(x)
+#
+# gen = ip_gen()
+# for value in gen:
+#     print(value)
+#     sleep(0.5)
 
 
 
 
+
+
+# import random
 # def ip_generator(subnet):
-#     ip, mask = subnet.split("/")
-#     print(ip, mask)
-#     if mask != "24":
-#         raise ValueError("mask is incorrect")
-#     ip4 = ip.rsplit(".", maxsplit=1)[0]
+#     ip,mask=subnet.split('/')
+#     print(ip, mask, sep=('\n'))
+#     if mask!='24':
+#         raise ValueError('Mask is incorrect')
+#     ip4=ip.rsplit('.',maxsplit=1)[0]
 #     print(ip4)
-#     for i in range(0, 256):
-#        new_ip =  ip4 + "." + str(i)
-#        yield new_ip
-# ip_gen = ip_generator("1.2.3.4/24")
+#     for i in random.sample(range(0,256),k=256) :
+#         new_ip=ip4+'.'+str(i)
+#         yield new_ip +'/'+mask
+#
+# ip_gen=ip_generator ("192.168.0.3/24")
 # for j in ip_gen:
 #     print(j)

@@ -17,15 +17,15 @@ def prime(max_prime):
 
 #------------------------------------------------------------------
 
-def encript(text,key):
-    my_list = []
-
-    for letter in text:
-        x = "".join(chr(ord(letter).__xor__(key)))
-        my_letter = chr(ord(letter).__xor__(key))
-        my_list.append(my_letter)
-    result = "".join(my_list)
-    return result
-
-enc = encript("Éÿå°óñþðä°âõñô°äøùã",144)
-print(enc)
+# def encript(text,key):
+#     my_list = []
+#
+#     for letter in text:
+#         x = "".join(chr(ord(letter).__xor__(key)))
+#         my_letter = chr(ord(letter).__xor__(key))
+#         my_list.append(my_letter)
+#     result = "".join(my_list)
+#     return result
+#
+# enc = encript("Éÿå°óñþðä°âõñô°äøùã",144)
+# print(enc)
