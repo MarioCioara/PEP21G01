@@ -13,8 +13,6 @@ b = int(input('b = '))
 c = int(input('c = '))
 x = int(input('x = '))
 
-
-
 def build(a, b, c):    # the first function
     def response(x):   # the second function which is returned by the first function
         result = 0
@@ -22,10 +20,8 @@ def build(a, b, c):    # the first function
         print('Result = ' + str(result))  # we print the result of the calculus
     return response    # we return the out second function inside the first function
 
-
-
-function = build(1,2,3) # we store the first function in a variable
-function(4) # our variable now can call the second function and print the result
+function = build(a,b,c) # we store the first function in a variable
+function(x) # our variable now can call the second function and print the result
 
 
 
