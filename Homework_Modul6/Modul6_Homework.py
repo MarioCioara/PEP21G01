@@ -23,6 +23,7 @@ Masinile cu serii pare sunt cu volan pe dreapta iar cele cu serii impare cu vola
 """
 
 class CarFactory():
+    '''class to track the work done'''
     left_wheel_cars = []
     right_wheel_cars = []
     left_wheel_done = []
@@ -39,6 +40,7 @@ class CarFactory():
         return CarIter(all_series)
 
     def lw_cars(self):
+        '''method for the cars that have left hand wheel'''
         list_pieces = [] # list containing all the cars produced today
         for i in range(self.start_series,self.start_series + self.nr_pieces + 1):
             list_pieces.append(i)
@@ -74,6 +76,7 @@ class CarFactory():
                      file.write('Masina seria: ' + str(x) + ' ' + 'Lotul:' + str(y) + '\n')
 
     def rw_cars(self):
+        '''method for the cars that have right hand wheel'''
         list_pieces = []  # list containing all the cars produced today
         for i in range(self.start_series, self.start_series + self.nr_pieces + 1):
             list_pieces.append(i)
