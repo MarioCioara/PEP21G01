@@ -22,11 +22,109 @@ Masinile cu serii pare sunt cu volan pe dreapta iar cele cu serii impare cu vola
 
 """
 
-class car_factory():
+class CarFactory():
+    left_wheel_cars = []
+    right_wheel_cars = []
+    left_wheel_done = []
+    right_wheel_done = []
 
-    def __init__(self,start_series,nr_pieces):
+    def __init__(self,start_series: int,nr_pieces: int):
         self.start_series = start_series
         self.nr_pieces = nr_pieces
+
+    def __iter__(self):
+        all_series = []
+        for series in self.left_wheel_done + self.right_wheel_done:
+            all_series.extend(series)
+        return CarIter(all_series)
+
+    def lw_cars(self):
+        list_pieces = [] # list containing all the cars produced today
+        for i in range(self.start_series,self.start_series + self.nr_pieces + 1):
+            list_pieces.append(i)
+
+
+
+        list_lot = [] # list containing the batches for each car produced
+        for z in list_pieces:
+            if z <= 20:
+                lot = 1
+                list_lot.append(lot)
+
+            if z > 20:
+                lot = z // 20 + 1
+                list_lot.append(lot)
+
+         #  containing the all cars produced today and their batches
+        all = {} # dict containing the cars and their batches
+        for i in list_pieces:
+            for j in list_lot:
+
+                all[i] = j
+                list_lot.remove(j)
+                break
+
+        with open('cars', 'w') as file:
+
+            file.write('Masini cu volan pe stanga: ' + '\n')
+            file.write('\n')
+
+            for x, y in all.items():
+                if x % 2 == 1:
+                     file.write('Masina seria: ' + str(x) + ' ' + 'Lotul:' + str(y) + '\n')
+
+    def rw_cars(self):
+        list_pieces = []  # list containing all the cars produced today
+        for i in range(self.start_series, self.start_series + self.nr_pieces + 1):
+            list_pieces.append(i)
+
+        list_lot = []  # list containing the batches for each car produced
+        for z in list_pieces:
+            if z <= 20:
+                lot = 1
+                list_lot.append(lot)
+
+            if z > 20:
+                lot = z // 20 + 1
+                list_lot.append(lot)
+
+        all = {}  # dict containing the cars and their batches
+        for i in list_pieces:
+            for j in list_lot:
+                all[i] = j
+                list_lot.remove(j)
+                break
+        with open('cars', 'a') as file:
+            file.write('\n')
+            file.write('Masini cu volan pe dreapta: ' + '\n')
+            file.write('\n')
+            for x, y in all.items():
+                if x % 2 == 0:
+                    file.write('Masina seria: ' + str(x) + ' ' + 'Lotul:' + str(y) + '\n')
+
+
+
+
+
+class CarIter():
+    '''Class for iterating all series'''
+    def __init__(self, series: list):
+        self.series = series
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if not self.series:
+            raise StopIteration
+        else:
+            return self.series.pop(0)
+
+
+
+obj_carfactory = CarFactory(314,90)
+obj_carfactory.lw_cars()
+obj_carfactory.rw_cars()
 
 
 
